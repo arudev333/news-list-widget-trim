@@ -1,0 +1,113 @@
+.input-group-append {
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-group input {
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 28px 0px 28px 16px !important;
+    font-size: 1.25em;
+    border: 1px solid #ACACAC;
+    color: #313131;
+}
+
+@-moz-document url-prefix() {
+    .input-group input {
+        padding: 12px 0px 4px 16px !important;
+        height: 60px;
+    }
+}
+
+.input-group input::placeholder {
+    color: #84B7E6;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.input-group-text {
+    background-color: #1266AE !important;
+    border: 1px solid #1266AE !important;
+    display: flex;
+    align-items: center;
+    padding: .375rem 1.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    margin-left: 1032px;
+    margin-top: -58px;
+    z-index: 1;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.pl-0,
+.px-0 {
+    padding-left: 0 !important;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+    z-index: 1;
+}
+
+.adobe-margin-0 {
+    margin: 0px;
+}
+
+
+button.active {
+    color: green;
+}
+
+.icon-search-white {
+    color: white;
+    font-size: 20px;
+    width: 0px;
+    margin-left: -8px;
+}
+
+.btn-white {
+    margin-right: 20px;
+}
+
+.btn-group {
+    margin-right: -19px !important;
+    margin-top: 5px !important;
+}
+
+.card {
+    border-radius: 4px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}

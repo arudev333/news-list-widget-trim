@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-md-12 adobe-margin-0">
+        <div class="input-group md-form form-sm form-2 pl-0">
+            <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search Here"
+                aria-label="Find member" [(ngModel)]="searchText">
+            <div class="input-group-append">
+                <span class="input-group-text">
+                    <i class="fa fa-search icon-search-white" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="btn-group pull-right">
+    <button class="btn btn-white" type="button" (click)="sortByAsc()">
+        <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
+    </button>
+    <button class="btn btn-white" type="button" (click)="sortByDes()">
+        <i class="fa fa-sort-amount-desc"></i>
+    </button>
+    <button class="btn btn-white" type="button" (click)="onDisplayModeChange(1)"
+        [ngClass]="{'btn-primary active': displayMode === 1}">
+        <i class="fa fa-th"></i>
+    </button>
+    <button class="btn btn-white" type="button" (click)="onDisplayModeChange(2)"
+        [ngClass]="{'btn-primary active': displayMode === 2}">
+        <i class="fa fa-list"></i>
+    </button>
+</div>
+
+<br><br><br><br>
+
+<!-- grid -->
+<div class="row" *ngIf="displayMode === 1 && filter == false">
+    <div class="col-md-4 adobe-margin-0"
+        *ngFor="let article of sortByDes() | grdFilter: {title: searchText, description:searchText,  publishedAt: searchText};">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image">
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <p class="card-text">{{article.publishedAt}}</p>
+            </div>
+        </div><br>
+    </div>
+</div>
+<div class="row" *ngIf="displayMode === 1 && filter == true">
+    <div class="col-md-4 adobe-margin-0"
+        *ngFor="let article of sortByAsc() | grdFilter: {title: searchText, description:searchText,  publishedAt: searchText};">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image">
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <p class="card-text">{{article.publishedAt}}</p>
+            </div>
+        </div><br>
+    </div>
+</div>
+<!-- List -->
+<div class="row" *ngIf="displayMode === 2 && filter == false">
+    <div clss="col-md-6 adobe-margin-0"
+        *ngFor="let article of sortByDes() | grdFilter: {title: searchText, description:searchText,  publishedAt: searchText};">
+        <div class="card" style="width: 40%;">
+            <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image">
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <p class="card-text">{{article.publishedAt}}</p>
+            </div>
+        </div> <br>
+    </div>
+</div>
+<div class="row" *ngIf="displayMode === 2 && filter == true">
+    <div clss="col-md-6 adobe-margin-0"
+        *ngFor="let article of sortByAsc() | grdFilter: {title: searchText, description:searchText,  publishedAt: searchText};">
+        <div class="card" style="width: 40%;">
+            <img class="card-img-top" src="{{article.urlToImage}}" alt="Card image">
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <p class="card-text">{{article.publishedAt}}</p>
+            </div>
+        </div> <br>
+    </div>
+</div>
